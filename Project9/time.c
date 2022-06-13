@@ -13,7 +13,7 @@ int timer()
         endtime += 20;
     }
     else
-        endtime += 10;
+        endtime += 15;
  
     char c;
 

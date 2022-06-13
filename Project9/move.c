@@ -44,6 +44,14 @@ int move(int flagx[2][2][3], int flagy[2][2][3], int barrierx[2][2][X], int barr
             end = 0;
             return 0;
         }
+        for (i = 0; i < 2; i++) {
+            for (ii = 0; ii < 2; ii++) {
+                for (iii = 0; iii < X; iii++) {
+                    if ((barrierx[i][ii][iii] == x) && (barriery[i][ii][iii] == y))
+                        continue;
+                } 
+            }
+        }
         gotoxy(x, y);
         printf("@\b");
         ch = _getch();
@@ -158,8 +166,11 @@ int move(int flagx[2][2][3], int flagy[2][2][3], int barrierx[2][2][X], int barr
             *p = 0;
         }
        
-        if (ch == 27)
+        if (ch == 27) {
+            suc = 1;
+            flu = 1;
             break;
+        }
 
 
     }
